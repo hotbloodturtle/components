@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        outline: 0;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class App {
+        constructor() {
+          this.length = 100;
+
+          this.canvas = document.createElement("canvas");
+          this.canvas.width = this.length;
+          this.canvas.height = this.length;
+          this.ctx = this.canvas.getContext("2d");
+          document.body.appendChild(this.canvas);
+
+          this.draw = this.draw.bind(this);
+          this.draw();
+        }
+
+        draw() {
+          this.ctx.lineWidth = 2;
+          this.ctx.moveTo(0, 0);
+          this.ctx.lineTo(this.length, this.length);
+          this.ctx.stroke();
+          this.ctx.beginPath();
+          this.ctx.moveTo(this.length, 0);
+          this.ctx.lineTo(0, this.length);
+          this.ctx.stroke();
+        }
+      }
+      window.onload = () => {
+        new App();
+      };
+    </script>
+  </body>
+</html>
