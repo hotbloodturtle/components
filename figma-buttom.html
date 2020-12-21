@@ -19,6 +19,9 @@
         height: 100%;
         overflow: hidden;
         background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       button {
         background-color: #000000;
@@ -29,6 +32,14 @@
         line-height: 1;
         border: 0;
         cursor: pointer;
+        font-family: Whyte, sans-serif;
+        transition: transform 150ms ease 0s;
+        transform: translateY(0px);
+        width: 115px;
+        height: 50px;
+      }
+      button:hover {
+        transform: translateY(-2px);
       }
     </style>
   </head>
@@ -43,11 +54,10 @@
           root.appendChild(this.button);
         }
       }
-
-      window.onload = () => {
+      window.addEventListener("DOMContentLoaded", function () {
         const app = new App("Sign up");
         app.show(document.body);
-      };
+      });
     </script>
   </body>
 </html>
