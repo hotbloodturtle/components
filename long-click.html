@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <h1 id="hi">Hello there!</h1>
+
+    <script>
+      var el = document.getElementById("hi");
+      var timerId;
+      el.addEventListener("mousedown", (e) => {
+        timerId = setTimeout(() => console.log("long click"), 1000);
+      });
+      el.addEventListener("mouseup", (e) => {
+        clearTimeout(timerId);
+      });
+    </script>
+  </body>
+</html>
